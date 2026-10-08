@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Typing Survivor - a 3D horde survival game where your typing speed is the weapon."
+    />
+    <title>Typing Survivor — 3D Word Survival Game</title>
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game-canvas"></canvas>
+
+      <!-- Top: the three word boxes -->
+      <div id="word-row" class="word-row hidden" aria-live="polite"></div>
+
+      <!-- Bottom-left: live run statistics -->
+      <div id="hud" class="hud hidden">
+        <div class="stat">
+          <span class="stat-label">SCORE</span>
+          <span class="stat-value" id="stat-score">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">WPM</span>
+          <span class="stat-value" id="stat-wpm">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">ACCURACY</span>
+          <span class="stat-value" id="stat-accuracy">100%</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">KILLS</span>
+          <span class="stat-value" id="stat-kills">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">TIME</span>
+          <span class="stat-value" id="stat-time">00:00</span>
+        </div>
+      </div>
+
+      <div id="vignette" class="vignette"></div>
+
+      <!-- Main menu -->
+      <div id="menu-screen" class="overlay">
+        <div class="panel">
+          <p class="kicker">3D TYPING SURVIVAL</p>
+          <h1 class="title">TYPING<span>SURVIVOR</span></h1>
+          <p class="tagline">Improve your typing. Survive the swarm.</p>
+
+          <button id="start-btn" class="btn" type="button">START GAME</button>
+          <button id="audio-toggle-btn" class="btn audio-toggle" type="button">🔊 SOUND: ON</button>
+
+          <div class="how">
+            <div class="how-item"><span class="key">type</span> a word to blast its letters like shotgun pellets</div>
+            <div class="how-item"><span class="key">enter</span> discards the current word</div>
+            <div class="how-item"><span class="key">wrong key</span> word turns red, then unlocks after 2s</div>
+            <div class="how-item"><span class="key">landed</span> words keep killing enemies on the ground</div>
+          </div>
+
+          <p class="footnote">
+            Letter blasts rake the most dangerous threat zone at close range &nbsp;·&nbsp; your character dodges on its own
+          </p>
+        </div>
+      </div>
+
+      <!-- Game over -->
+      <div id="gameover-screen" class="overlay hidden">
+        <div class="panel">
+          <p class="kicker danger">SWARM OVERRUN</p>
+          <h2 class="gameover-title">GAME OVER</h2>
+
+          <div class="results">
+            <div class="result">
+              <span class="result-label">Score</span>
+              <span class="result-value" id="final-score">0</span>
+            </div>
+            <div class="result">
+              <span class="result-label">Words Typed</span>
+              <span class="result-value" id="final-words">0</span>
+            </div>
+            <div class="result">
+              <span class="result-label">Accuracy</span>
+              <span class="result-value" id="final-accuracy">100%</span>
+            </div>
+            <div class="result">
+              <span class="result-label">WPM</span>
+              <span class="result-value" id="final-wpm">0</span>
+            </div>
+            <div class="result">
+              <span class="result-label">Kills</span>
+              <span class="result-value" id="final-kills">0</span>
+            </div>
+            <div class="result">
+              <span class="result-label">Survived</span>
+              <span class="result-value" id="final-time">00:00</span>
+            </div>
+          </div>
+
+          <button id="restart-btn" class="btn" type="button">PLAY AGAIN</button>
+          <p class="footnote">Press Enter to play again · Escape for the menu</p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
