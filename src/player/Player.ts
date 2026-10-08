@@ -1,7 +1,6 @@
 import {
   BufferGeometry,
   CapsuleGeometry,
-  ConeGeometry,
   CylinderGeometry,
   Group,
   Mesh,
@@ -18,9 +17,6 @@ import { clamp, damp, lerp } from '../utils/MathUtils';
 
 /** Keep-away margin so the player cannot touch the arena rim. */
 const EDGE_MARGIN = 4;
-
-/** Braid strand geometry: segments per side (plus one tapered tip cone). */
-const BRAID_SEGMENTS = 7;
 
 /**
  * The blue player capsule.
